@@ -1,4 +1,4 @@
-# gesdisc-tutorials
+# GES DISC Tutorials
 
 A place to find cloud relevant tutorials on how to use GES DISC tools, services, and data.
 
