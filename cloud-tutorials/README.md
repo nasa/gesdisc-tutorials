@@ -10,7 +10,7 @@ Keep up with current cloud options by visiting the [Cloud Migration page](https:
 
 Some tutorials can be run locally and takie advantage of cloud archives or cloud-based tools, while other tutorials must be executed using cloud resources provided by AWS in a particular region, us-west-2. These tutorials contain a salmon-colored banner indicating this requirement.
 
-![](../images/us-west-2-banner.png)
+![](../images/us-west-2-banner.png "Banner used in notebooks that require compute resources in the AWS us-west-2 region.")
 
 
 
