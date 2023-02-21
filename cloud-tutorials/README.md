@@ -8,7 +8,7 @@ Most tutorials in this repository take the form of Python notebooks. Jupyter is 
 
 Keep up with current cloud options by visiting the [Cloud Migration page](https://disc.gsfc.nasa.gov/information/documents?title=Migrating%20to%20the%20Cloud) on the GES DISC website. Here you will find [basic information on the transition to the cloud](https://disc.gsfc.nasa.gov/information/documents?title=Migrating%20to%20the%20Cloud#introduction), [frequently asked questions](https://disc.gsfc.nasa.gov/information/documents?title=Migrating%20to%20the%20Cloud#faq), [How-Tos](https://disc.gsfc.nasa.gov/information/documents?title=Migrating%20to%20the%20Cloud#how-to) and [definitions](https://disc.gsfc.nasa.gov/information/glossary?keywords=%22Earthdata%20Cloud%22&page=1). 
 
-Some tutorials can be run locally and takie advantage of cloud archives or cloud-based tools, while other tutorials must be executed using cloud resources provided by AWS in a particular region, us-west-2. These tutorials contain a salmon-colored banner indicating this requirement.
+Some tutorials can be run locally to take advantage of cloud archives or cloud-based tools, while other tutorials must be executed using cloud resources provided by AWS in a particular region, us-west-2. These tutorials contain a salmon-colored banner indicating this requirement.
 
 ![](../images/us-west-2-banner.png "Banner used in notebooks that require compute resources in the AWS us-west-2 region.")
 
