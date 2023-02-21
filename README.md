@@ -1,6 +1,6 @@
 # GES DISC Tutorials
 
-A place to find cloud relevant tutorials on how to use GES DISC tools, services, and data.
+A place to find tutorials on how to use GES DISC tools, services, and data.
 
 Most tutorials in this repository take the form of python notebooks. Jupyter is a very popular version of python notebooks, and is used extensively by the GES DISC team.
 
