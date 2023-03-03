@@ -10,7 +10,7 @@ Keep up with current cloud options by visiting the [Cloud Migration page](https:
 
 Some tutorials can be run locally to take advantage of cloud archives or cloud-based tools, while other tutorials must be executed using cloud resources provided by AWS in a particular region, us-west-2. These tutorials contain a salmon-colored banner indicating this requirement.
 
-<div style="background:#fc9090;border:1px solid #cccccc;padding:5px 10px;"><big><b>Note:  </b>Because this notebook uses the S3 protocol, <em><strong>it will only run in an environment with <a href="https://disc.gsfc.nasa.gov/information/glossary?keywords=%22earthdata%20cloud%22&amp;title=AWS%20region">us-west-2 AWS access</a></strong></em>.</big></div>
+![](../images/us-west-2-banner.png "Banner used in notebooks that require compute resources in the AWS us-west-2 region.")
 
 
 
