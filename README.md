@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8205655.svg)](https://doi.org/10.5281/zenodo.8205655) 
+
 # GES DISC Tutorials
 
 A place to find tutorials on how to use GES DISC tools, services, and data.
