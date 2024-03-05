@@ -8,6 +8,7 @@ dependencies:
   - dask
   - matplotlib
   - cartopy
+  - pip
   - pip:
       - netcdf4==1.6.2
       - notebook
