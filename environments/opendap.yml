@@ -1,0 +1,14 @@
+name: opendap
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - xarray=2024.1.0
+  - dask
+  - matplotlib
+  - cartopy
+  - pip
+  - pip:
+      - netcdf4==1.6.2
+      - notebook
