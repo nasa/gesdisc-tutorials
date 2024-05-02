@@ -11,4 +11,5 @@ dependencies:
   - pip
   - pip:
       - netcdf4==1.6.2
+      - pydap==3.4.1
       - notebook
