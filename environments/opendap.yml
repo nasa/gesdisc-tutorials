@@ -7,9 +7,15 @@ dependencies:
   - xarray=2024.1.0
   - dask
   - matplotlib
+  - numpy
   - cartopy
+  - h5netcdf
   - pip
   - pip:
       - netcdf4==1.6.2
-      - pydap==3.4.1
+      - pydap==3.5
       - notebook
+      - ipywidgets
+      - widgetsnbextension
+      - pandas-profiling
+      - lxml
