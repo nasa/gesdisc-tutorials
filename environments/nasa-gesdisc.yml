@@ -1,21 +1,24 @@
-name: opendap
+name: nasa-gesdisc
 channels:
   - conda-forge
   - defaults
 dependencies:
   - python=3.10
-  - xarray=2024.1.0
+  - xarray=2025.4.0
   - dask
+  - pandas
   - matplotlib
-  - numpy
+  - numpy=1.26.4
   - cartopy
   - h5netcdf
+  - earthaccess
   - pip
   - pip:
       - netcdf4==1.6.2
-      - pydap==3.5
+      - pydap==3.5.5
       - notebook
       - ipywidgets
       - widgetsnbextension
       - pandas-profiling
       - lxml
+      - tabulate
