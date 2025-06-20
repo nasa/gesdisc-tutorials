@@ -9,7 +9,7 @@ dependencies:
   - pandas
   - seaborn
   - matplotlib
-  - numpy=1.26.4
+  - numpy=1.25.2
   - cartopy
   - h5netcdf
   - h5py
