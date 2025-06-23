@@ -1,0 +1,26 @@
+name: opendap
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - libnetcdf=4.8.1
+  - xarray=2025.4.0
+  - dask
+  - pandas
+  - seaborn
+  - matplotlib
+  - numpy=1.25.2
+  - cartopy
+  - h5netcdf
+  - h5py
+  - earthaccess
+  - pip
+  - pip:
+      - pydap==3.5.5
+      - notebook
+      - ipywidgets
+      - widgetsnbextension
+      - pandas-profiling
+      - lxml
+      - tabulate
