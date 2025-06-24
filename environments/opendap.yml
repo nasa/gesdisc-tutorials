@@ -4,7 +4,6 @@ channels:
   - defaults
 dependencies:
   - python=3.10
-  - libnetcdf=4.8.1
   - xarray=2025.4.0
   - dask
   - pandas
