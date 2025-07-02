@@ -32,3 +32,17 @@ The `opendap.yml` environment contains a Python 3.10 installation that *only* wo
   - Open Anaconda Navigator, click `Environments` -> `Import`
   - Select `Import from: Local drive` and select the downloaded `opendap.yml` file. `New Environment Name` will automatically fill using the name from the file, but you can change this if desired.
   - Click the triangular "play" button to the right of the `opendap` environment tab, and click the "Open in Terminal" button to activate the environment in a terminal session.
+
+#### 4. Installing `arcgis.yml`
+The `arcgis.yml` environment contains a Python 3.10 installation that *only* works with select ArcGIS how-tos.
+
+- To install via a command line: 
+  - Open a terminal, ensuring that the `conda` can be called.
+  - Enter: `conda env create -f https://raw.githubusercontent.com/nasa/gesdisc-tutorials/refs/heads/main/environments/arcgis.yml`.
+  - Activate the environment by entering: `conda activate nasa-gesdisc-arcgis`.
+
+- To install via Anaconda Navigator: 
+  - Download `arcgis.yml` to your computer.
+  - Open Anaconda Navigator, click `Environments` -> `Import`
+  - Select `Import from: Local drive` and select the downloaded `arcgis.yml` file. `New Environment Name` will automatically fill using the name from the file, but you can change this if desired.
+  - Click the triangular "play" button to the right of the `nasa-gesdisc-arcgis` environment tab, and click the "Open in Terminal" button to activate the environment in a terminal session.
