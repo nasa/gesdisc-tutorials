@@ -1,4 +1,4 @@
-name: opendap
+name: nasa-gesdisc-opendap
 channels:
   - conda-forge
   - defaults
