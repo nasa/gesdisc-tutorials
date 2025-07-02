@@ -1,5 +1,4 @@
-### Custom GES DISC Anaconda Environments
-
+# Custom GES DISC Anaconda Environments
 #### Description
 In order to mitigate errors, GES DISC provides customized Anaconda YAML environment files, which users can install before running select Python tutorials. These YAMLs are organized by services, such as OPeNDAP, and can be installed directly or by downloading from the gesdisc-tutorials/environments folder. The instructions for installing each individual environment are described here, and will be updated as more environment files are added or changed.
 
