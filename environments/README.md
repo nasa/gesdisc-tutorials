@@ -6,7 +6,7 @@ In order to mitigate errors, GES DISC provides customized Anaconda YAML environm
 An Anaconda installation is required for installing custom environment files. We recommend installing `miniconda` for lightweight, terminal-based environment management, or the standard Anaconda Distribution, which includes a GUI (Anaconda Navigator) for managing environment files. `miniconda` installation steps can be accessed [here](https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions), and Anaconda Distribution steps can be accessed [here](https://www.anaconda.com/docs/getting-started/anaconda/install), available for Windows/macOS/Linux.
 
 #### 2. Installing `nasa-gesdisc.yml`
-The `nasa-gesdisc.yml` environment contains a Python 3.10 installation that works with all of our how-tos *except* for our [Cloud OPeNDAP guides](https://disc.gsfc.nasa.gov/information/tools?keywords=cloud%20opendap&title=OPeNDAP%20In%20The%20Cloud). If you wish to access Cloud OPeNDAP, we recommend following the steps for installing `opendap.yml` outlined in step 3.
+The `nasa-gesdisc.yml` environment contains a Python 3.10 installation that works with all of our how-tos *except* for our [OPeNDAP guides](https://disc.gsfc.nasa.gov/information/tools?keywords=cloud%20opendap&title=OPeNDAP%20In%20The%20Cloud) or ArcGIS tutorials. If you wish to access Cloud OPeNDAP, we recommend following the steps for installing `opendap.yml` outlined in step 3, or for utilizing ArcGIS tutorials, please install `arcgis.yml` by following step 4.
 
 - To install via a command line: 
   - Open a terminal, ensuring that the `conda` can be called.
