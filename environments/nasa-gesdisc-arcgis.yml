@@ -1,22 +1,15 @@
-name: nasa-gesdisc
+name: nasa-gesdisc-arcgis
 channels:
   - conda-forge
   - defaults
 dependencies:
   - python=3.10
-  - xarray=2025.4.0
-  - dask
-  - pandas
-  - seaborn
-  - matplotlib
   - numpy=1.25.2
-  - cartopy
-  - h5netcdf
-  - h5py
-  - earthaccess
+  - esri::arcgis
   - pip
   - pip:
       - netcdf4==1.6.2
+      - tornado
       - notebook
       - ipywidgets
       - widgetsnbextension

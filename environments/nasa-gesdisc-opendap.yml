@@ -1,4 +1,4 @@
-name: nasa-gesdisc
+name: nasa-gesdisc-opendap
 channels:
   - conda-forge
   - defaults
@@ -16,6 +16,7 @@ dependencies:
   - earthaccess
   - pip
   - pip:
+      - pydap==3.5.5
       - netcdf4==1.6.2
       - notebook
       - ipywidgets
