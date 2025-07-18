@@ -14,6 +14,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ### Date Authored: 2025-07-03
 
 ## Overview
+This notebook provides a quick demonstration on accessing and summarizing products from the Orbiting Carbon Observatory-2 (OCO-2) hosted via an Amazon S3 bucket. It demonstrates how to access an S3 bucket with the __??___ package, how to read data with ___??___, and how to quickly compute and plot small-area aggregate estimates of atmospheric carbon dioxide.
+
+__add note about earthdatalogin version to install__
+pak::pak("boettiger-lab/earthdatalogin")
 
 ## Import packages
 ```{r libraries, echo=TRUE, results='hide'}
@@ -28,7 +32,6 @@ suppressPackageStartupMessages({
     library(stringr)
     library(hdf5r)
     library(aws.s3)
-    library(paws)
 })
 
 
@@ -48,46 +51,46 @@ edl_s3_token(
 * Final object has JSON response parsed
 
 ```{r cmr_req, include=TRUE}
-cmrurl <- 'https://cmr.earthdata.nasa.gov/search/granules'
+cmr_url <- 'https://cmr.earthdata.nasa.gov/search/granules'
 short_name <- 'OCO2_L2_Lite_FP'
 start_time <- '2020-07-05T00:00:00Z'
 end_time <- '2020-07-07T00:00:00Z'
-tmstr <- paste(start_time,end_time,sep=",")
+time_string <- paste(start_time,end_time,sep=",")
 
-rqoco <- request(cmrurl) %>% 
+request_oco <- request(cmr_url) %>% 
          req_headers("Accept" = "application/json") %>% 
-         req_url_query(short_name=short_name,temporal=tmstr,page_size="200",version='11.1r') %>%
+         req_url_query(short_name=short_name,temporal=time_string,page_size="200",version='11.1r') %>%
          req_method("GET") %>% req_perform()     
-granv11 <- rqoco %>% resp_body_json()
+granules_v11 <- request_oco %>% resp_body_json()
 ```
 
 Now, the S3 URLs of the relevant products are extracted 
 
 ```{r cmr_s3_list, include=TRUE}
 
-nprd <- length(granv11$feed$entry)
-s3url <- NULL
+num_products <- length(granules_v11$feed$entry)
+s3_url <- NULL
 
-hrefs3 <- function(lnkidx, rflst) {
+href_s3 <- function(link_index, ref_list) {
     # Extract the full link from a GES DISC JSON link list
-    lnkvl <- rflst[[lnkidx]]$href
-    return(lnkvl)
+    link_value <- ref_list[[link_index]]$href
+    return(link_value)
 }
 
-for (i in seq(1,nprd)) {
-    nlnk <- length(granv11$feed$entry[[i]]$links)
-    mp1 <- unlist(map(seq(1,nlnk), .f= hrefs3, rflst = granv11$feed$entry[[1]]$links))
-    mtchs3 <- str_detect(mp1,"s3://")
-    s3url <- c(s3url,mp1[mtchs3])
+for (i in seq(1,num_products)) {
+    num_links <- length(granules_v11$feed$entry[[i]]$links)
+    mapped_outputs <- unlist(map(seq(1,num_link), .f = href_s3, ref_list = granules_v11$feed$entry[[1]]$links))
+    match_s3 <- str_detect(mapped_outputs,"s3://")
+    s3_url <- c(s3_url,mapped_outputs[match_s3])
 }
 
-print(s3url)
+print(s3_url)
 ```
 
 ## Obtain S3 credentials
 
 * S3 direct access enabled by `aws.s3` package
-* Check options for the s3fs opjects, e.g. open S3 file object before accessing NetCDF
+* Check options for the s3fs objects, e.g. open S3 file object before accessing NetCDF
 
 ```{r s3_access, include=TRUE}
 # S3 access dataset
@@ -95,45 +98,47 @@ Sys.setenv("AWS_DEFAULT_REGION" = "us-west-2")
 ```
 
 ## Open granules
-
+__describe tibble and link to doc__
+__sounding id by 10 sec chunks explainer__
 
 ```{r open_granules, include=TRUE}
-hf <- s3read_using(FUN = H5File$new, object = s3url[1])
-hf$ls(recursive=FALSE)$name
-lat <- hf[['latitude']][]
-lon <- hf[['longitude']][]
-qflg <- hf[['xco2_quality_flag']][]
-ltxco2 <- hf[['xco2']][]
-ltsdg <- hf[['sounding_id']][]
-hf$close_all()
+file_object <- s3read_using(FUN = H5File$new, object = s3_url[1])
+file_object$ls(recursive=FALSE)$name
+lat <- file_object[['latitude']][]
+lon <- file_object[['longitude']][]
+quality_flag_xco2 <- file_object[['xco2_quality_flag']][]
+lite_xco2 <- file_object[['xco2']][]
+lite_sounding_id <- file_object[['sounding_id']][]
+file_object$close_all()
 
-table(qflg)
-lttbl <- tibble(SoundingID=as.vector(ltsdg), Latitude=as.vector(lat), Longitude=as.vector(lon),
-                XCO2=as.vector(ltxco2), V11QFlag=as.vector(qflg))
-lttbl <- lttbl %>% mutate(Sdg10s = floor(SoundingID / 1.0e3))
-lttbl <- lttbl %>% filter(V11QFlag == 0)
+table(quality_flag_xco2)
+lite_tibble <- tibble(SoundingID=as.vector(ltsdg), Latitude=as.vector(lat), Longitude=as.vector(lon),
+                XCO2=as.vector(ltxco2), V11QFlag=as.vector(quality_flag_xco2))
+lite_tibble <- lite_tibble %>% mutate(Sounding_10sec = floor(SoundingID / 1.0e3))
+lite_tibble <- lite_tibble %>% filter(V11QFlag == 0)
 ```
 
 ```{r ltco2_frm, include=TRUE}
-print(head(lttbl))
+print(head(lite_tibble))
 ```
 
 ### Group and Summarize
-
+__add explainer paragraph here__
+__link to tidyverse tutorial on longer/wider and why use__
 ```{r grpsmry, include=TRUE}
 
 # Use the pivot_longer, pivot_wider approach
-ltlng <- lttbl %>% pivot_longer(cols = c("XCO2","Latitude","Longitude"), names_to = "GeoVar",
+lite_tibble_longer <- lite_tibble %>% pivot_longer(cols = c("XCO2","Latitude","Longitude"), names_to = "GeoVar",
                              names_prefix="", values_to = "value")
-ltgrp <- ltlng %>% group_by(Sdg10s,GeoVar) %>% summarise(Med = median(value,na.rm=TRUE), NSmp=n()) %>% ungroup()
-ltgrp <- ltgrp %>% filter(NSmp > 30)
-ltwdr <- ltgrp %>% pivot_wider(id_cols = c("Sdg10s"), names_from=c("GeoVar"), names_prefix=c("Med_"), 
+lite_group <- lite_tibble_longer %>% group_by(Sounding_10sec,GeoVar) %>% summarise(Med = median(value,na.rm=TRUE), NumSamples=n()) %>% ungroup()
+lite_group <- lite_group %>% filter(NumSamples > 30)
+lite_group_wider <- lite_group %>% pivot_wider(id_cols = c("Sounding_10sec"), names_from=c("GeoVar"), names_prefix=c("Med_"), 
                                values_from="Med")
 
 ```
 
 ## Plot
-
+__add doc about sf and package::__
 ```{r map10s, include=TRUE}
 
 # Map results
@@ -156,7 +161,7 @@ theme_mat$strip.text$size = 11
 theme_mat$legend.text$size = 10
 theme_mat$legend.title$size = 11
 
-mrg_fnl <- as.data.frame(ltwdr)
+mrg_fnl <- as.data.frame(lite_group_wider)
 mrg_fnl_sf <- st_as_sf(mrg_fnl, coords = c("Med_Longitude", "Med_Latitude"), 
                         crs = 4326, agr = "constant")
 
