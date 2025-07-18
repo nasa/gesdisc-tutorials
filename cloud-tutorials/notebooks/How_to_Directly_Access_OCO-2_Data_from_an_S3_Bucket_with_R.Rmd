@@ -3,7 +3,7 @@ title: "How To Directly Access OCO-2 Data from an S3 Bucket using R"
 output:
   github_document:
     df_print: paged
-date: "2025-07-03"
+date: "2025-07-18"
 ---
 
 ```{r setup, include=FALSE}
@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ### Date Authored: 2025-07-03
 
 ## Overview
-This notebook provides a quick demonstration on accessing and summarizing products from the Orbiting Carbon Observatory-2 (OCO-2) hosted via an Amazon S3 bucket. It demonstrates how to access an S3 bucket with the __??___ package, how to read data with ___??___, and how to quickly compute and plot small-area aggregate estimates of atmospheric carbon dioxide.
+This notebook provides a quick demonstration on accessing and summarizing products from the Orbiting Carbon Observatory-2 (OCO-2) hosted via an Amazon S3 bucket. It demonstrates how to access an S3 bucket with the aws.s3 package, how to read data with ___??___, and how to quickly compute and plot small-area aggregate estimates of atmospheric carbon dioxide.
 
 __add note about earthdatalogin version to install__
 pak::pak("boettiger-lab/earthdatalogin")
@@ -22,12 +22,12 @@ pak::pak("boettiger-lab/earthdatalogin")
 ## Import packages
 ```{r libraries, echo=TRUE, results='hide'}
 suppressPackageStartupMessages({ 
+    library(earthdatalogin)  
     library(httr2)
     library(tidyr)
     library(dplyr)
     library(ggplot2)
     library(viridisLite)
-    library(earthdatalogin)
     library(purrr)
     library(stringr)
     library(hdf5r)
@@ -37,15 +37,16 @@ suppressPackageStartupMessages({
 
 ```
 ## Authentication
+
 ```{r s3_token, include=TRUE}
-edl_s3_token(
+earthdatalogin::edl_s3_token(
   daac = "https://data.gesdisc.earthdata.nasa.gov",
   prompt_for_netrc = FALSE)
 
 ```
 ## Search
 
-* Make the CMR API request for OCO-2 LtCO2 products for Version 11.1r
+* Make the CMR API request for OCO-2 Lite CO2 products for Version 11.1r
 * The final object parses the JSON response with the product information
 * `httr2` R package has similar capability to the Python `requests` library
 * Final object has JSON response parsed
@@ -57,11 +58,11 @@ start_time <- '2020-07-05T00:00:00Z'
 end_time <- '2020-07-07T00:00:00Z'
 time_string <- paste(start_time,end_time,sep=",")
 
-request_oco <- request(cmr_url) %>% 
-         req_headers("Accept" = "application/json") %>% 
-         req_url_query(short_name=short_name,temporal=time_string,page_size="200",version='11.1r') %>%
-         req_method("GET") %>% req_perform()     
-granules_v11 <- request_oco %>% resp_body_json()
+request_oco <- httr2::request(cmr_url) %>% 
+         httr2::req_headers("Accept" = "application/json") %>% 
+         httr2::req_url_query(short_name=short_name,temporal=time_string,page_size="200",version='11.1r') %>%
+         httr2::req_method("GET") %>% httr2::req_perform()     
+granules_v11 <- request_oco %>% httr2::resp_body_json()
 ```
 
 Now, the S3 URLs of the relevant products are extracted 
@@ -79,7 +80,7 @@ href_s3 <- function(link_index, ref_list) {
 
 for (i in seq(1,num_products)) {
     num_links <- length(granules_v11$feed$entry[[i]]$links)
-    mapped_outputs <- unlist(map(seq(1,num_link), .f = href_s3, ref_list = granules_v11$feed$entry[[1]]$links))
+    mapped_outputs <- unlist(map(seq(1,num_links), .f = href_s3, ref_list = granules_v11$feed$entry[[1]]$links))
     match_s3 <- str_detect(mapped_outputs,"s3://")
     s3_url <- c(s3_url,mapped_outputs[match_s3])
 }
@@ -102,44 +103,42 @@ __describe tibble and link to doc__
 __sounding id by 10 sec chunks explainer__
 
 ```{r open_granules, include=TRUE}
-file_object <- s3read_using(FUN = H5File$new, object = s3_url[1])
+file_object <- aws.s3::s3read_using(FUN = H5File$new, object = s3_url[1])
 file_object$ls(recursive=FALSE)$name
 lat <- file_object[['latitude']][]
 lon <- file_object[['longitude']][]
 quality_flag_xco2 <- file_object[['xco2_quality_flag']][]
-lite_xco2 <- file_object[['xco2']][]
-lite_sounding_id <- file_object[['sounding_id']][]
+xco2 <- file_object[['xco2']][]
+sounding_id <- file_object[['sounding_id']][]
 file_object$close_all()
 
 table(quality_flag_xco2)
-lite_tibble <- tibble(SoundingID=as.vector(ltsdg), Latitude=as.vector(lat), Longitude=as.vector(lon),
-                XCO2=as.vector(ltxco2), V11QFlag=as.vector(quality_flag_xco2))
-lite_tibble <- lite_tibble %>% mutate(Sounding_10sec = floor(SoundingID / 1.0e3))
-lite_tibble <- lite_tibble %>% filter(V11QFlag == 0)
+xco2_tibble <- tibble(SoundingID=as.vector(sounding_id), Latitude=as.vector(lat), Longitude=as.vector(lon),
+                XCO2=as.vector(xco2), V11QFlag=as.vector(quality_flag_xco2))
+xco2_tibble <- xco2_tibble %>% mutate(Sounding_10sec = floor(SoundingID / 1.0e3))
+xco2_tibble <- xco2_tibble %>% filter(V11QFlag == 0)
 ```
 
-```{r ltco2_frm, include=TRUE}
-print(head(lite_tibble))
+```{r xco2_frame, include=TRUE}
+print(head(xco2_tibble))
 ```
 
 ### Group and Summarize
 __add explainer paragraph here__
 __link to tidyverse tutorial on longer/wider and why use__
-```{r grpsmry, include=TRUE}
+```{r group_summary, include=TRUE}
 
 # Use the pivot_longer, pivot_wider approach
-lite_tibble_longer <- lite_tibble %>% pivot_longer(cols = c("XCO2","Latitude","Longitude"), names_to = "GeoVar",
-                             names_prefix="", values_to = "value")
-lite_group <- lite_tibble_longer %>% group_by(Sounding_10sec,GeoVar) %>% summarise(Med = median(value,na.rm=TRUE), NumSamples=n()) %>% ungroup()
-lite_group <- lite_group %>% filter(NumSamples > 30)
-lite_group_wider <- lite_group %>% pivot_wider(id_cols = c("Sounding_10sec"), names_from=c("GeoVar"), names_prefix=c("Med_"), 
-                               values_from="Med")
+xco2_tibble_longer <- xco2_tibble %>% pivot_longer(cols = c("XCO2","Latitude","Longitude"), names_to = "GeoVar", names_prefix="", values_to = "value")
+xco2_group <- xco2_tibble_longer %>% group_by(Sounding_10sec,GeoVar) %>% summarise(Med = median(value,na.rm=TRUE), NumSamples=n()) %>% ungroup()
+xco2_group <- xco2_group %>% filter(NumSamples > 30)
+xco2_group_wider <- xco2_group %>% pivot_wider(id_cols = c("Sounding_10sec"), names_from=c("GeoVar"), names_prefix=c("Med_"), values_from="Med")
 
 ```
 
 ## Plot
 __add doc about sf and package::__
-```{r map10s, include=TRUE}
+```{r map_10sec, include=TRUE}
 
 # Map results
 suppressPackageStartupMessages({ 
@@ -161,18 +160,18 @@ theme_mat$strip.text$size = 11
 theme_mat$legend.text$size = 10
 theme_mat$legend.title$size = 11
 
-mrg_fnl <- as.data.frame(lite_group_wider)
-mrg_fnl_sf <- st_as_sf(mrg_fnl, coords = c("Med_Longitude", "Med_Latitude"), 
+xco2_merged <- as.data.frame(xco2_group_wider)
+xco2_merged_sf <- st_as_sf(xco2_merged, coords = c("Med_Longitude", "Med_Latitude"), 
                         crs = 4326, agr = "constant")
 
 world <- ne_coastline(scale = "medium", returnclass = "sf")
 p9 = viridis(9)
 
-ltmap <- ggplot(data = world) + geom_sf(color = '#777777') + 
-  geom_sf(data = mrg_fnl_sf,aes(color=Med_XCO2), size=0.8) +
+xco2_map <- ggplot(data = world) + geom_sf(color = '#777777') + 
+  geom_sf(data = xco2_merged_sf,aes(color=Med_XCO2), size=0.8) +
   scale_color_gradientn("XCO2 [ppm]",colors=p9)  + 
-  theme_mat +  ggtitle("OCO-2 10s Median XCO2")  
+  theme_mat +  ggtitle("OCO-2 10 sec Median of XCO2")  
 
-ltmap
+xco2_map
 ```
 
