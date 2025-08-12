@@ -11,7 +11,7 @@ def display_filtered_table(collections):
 
     table_rows = ""
     for row in rows:
-        table_rows += "<tr>" + "".join(f"<td>{cell}</td>" for cell in row) + "</tr>"
+        table_rows += "<tr>" + "".join(f"<td style='text-align: left; padding: 4px 8px;'>{cell}</td>" for cell in row) + "</tr>"
 
     html_content = f"""
     <div style="margin-bottom: 10px;">
@@ -20,7 +20,7 @@ def display_filtered_table(collections):
     </div>
 
     <div style="height: 400px; overflow: auto; border: 1px solid #ccc; padding: 10px; font-size: 16px;">
-        <table id="collectionsTable" style="width: 100%; border-collapse: collapse;">
+        <table id="collectionsTable" style="max-width: 100%; border-collapse: collapse;">
             <thead>
                 <tr>
                     <th style="text-align: left;">{headers[0]}</th>
