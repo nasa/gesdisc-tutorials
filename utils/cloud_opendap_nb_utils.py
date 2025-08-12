@@ -7,7 +7,10 @@ def display_filtered_table(collections):
     for concept_id, short_name in sorted(collections.items(), key=lambda x: x[1]):
         url = f"https://cmr.earthdata.nasa.gov/virtual-directory/collections/{concept_id}/temporal"
         clickable_url = f'<a href="{url}" target="_blank">{url}</a>'
-        rows.append([short_name, clickable_url])
+        # rows.append([short_name, clickable_url])
+        short_name_url = f'https://cmr.earthdata.nasa.gov/search/concepts/{concept_id}.html'
+        clickable_short_name = f'<a href="{short_name_url}" target="_blank">{short_name}</a>'
+        rows.append([clickable_short_name, clickable_url])
 
     table_rows = ""
     for row in rows:
