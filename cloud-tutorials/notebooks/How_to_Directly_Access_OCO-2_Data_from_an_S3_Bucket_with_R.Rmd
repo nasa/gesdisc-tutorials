@@ -9,7 +9,7 @@ date: "2025-08-12"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
+# How To Directly Access OCO-2 Data from an S3 Bucket using R
 ### Author: Jon Hobbs, Alexis Hunzinger
 ### Date Authored: 2025-08-12
 
