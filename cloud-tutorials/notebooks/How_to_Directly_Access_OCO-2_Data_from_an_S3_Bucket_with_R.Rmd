@@ -28,7 +28,7 @@ Most users of OCO-2 and OCO-3 XCO2 data work with the missions' *lite* products.
 
 **One-time package configuration**
 
-Earthdata authentication is handled using the `earthdatalogin` package. Authentication for S3 credentials is handled using a development version of the package. This installation should only need to be executed *once* with the `pak` package.
+Earthdata authentication is handled using the `earthdatalogin` package. Authentication for S3 credentials is handled using a development version of the package. This installation should only need to be executed *once*.
 
 ```{r edlinstall, echo=TRUE, results='hide', eval=FALSE}
 install.packages(
@@ -58,7 +58,7 @@ suppressPackageStartupMessages({
 
 ## Authentication
 
-`earthdatalogin` authentication with username and password to obtain S3 credentials
+`earthdatalogin` authentication with username and password to obtain S3 credentials. This function expects a `.netrc` file to be present; to generate a `.netrc` file with R, consider using the [earthdatalogin::edl_netrc()](https://boettiger-lab.github.io/earthdatalogin/reference/edl_netrc.html) function.
 
 ```{r s3_token, include=TRUE}
 earthdatalogin::edl_s3_token(
