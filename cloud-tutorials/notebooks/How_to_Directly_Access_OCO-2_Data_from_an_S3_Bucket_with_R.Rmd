@@ -13,7 +13,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ### Author: Jon Hobbs, Alexis Hunzinger
 ### Date Authored: 2025-08-12
 
-:warning: **Warning:** Because this notebook uses the S3 protocol, it will only run in an environment with us-west-2 AWS access.
+::: {.callout-warning}
+**Warning:** Because this notebook uses the S3 protocol, it will only run in an environment with us-west-2 AWS access.
+:::
 
 ## Overview
 This notebook provides a quick demonstration on accessing and summarizing products from the Orbiting Carbon Observatory-2 (OCO-2) hosted via an Amazon S3 bucket. It demonstrates how to access an S3 bucket with the `aws.s3` package, how to read data with the `hdf5r` package, and how to quickly compute and plot small-area aggregate estimates of atmospheric carbon dioxide using data wrangling tools from the `tidyverse` and visualization with `ggplot2`.
