@@ -28,9 +28,12 @@ Most users of OCO-2 and OCO-3 XCO2 data work with the missions' *lite* products.
 
 Earthdata authentication is handled using the `earthdatalogin` package. Authentication for S3 credentials is handled using a development version of the package. This installation should only need to be executed *once* with the `pak` package.
 
-```{r pakinstall, echo=TRUE, results='hide', eval=FALSE}
-library(pak)
-pak::pkg_install("boettiger-lab/earthdatalogin")
+```{r edlinstall, echo=TRUE, results='hide', eval=FALSE}
+install.packages(
+  "earthdatalogin",
+  repos = "https://cloud.r-project.org/",
+  type = "source"
+)
 ```
 
 Other packages are loaded for each R session.
