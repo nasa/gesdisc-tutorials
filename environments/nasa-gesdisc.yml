@@ -5,6 +5,7 @@ channels:
 dependencies:
   - python=3.10
   - xarray=2025.4.0
+  - rioxarray
   - dask
   - pandas
   - seaborn
@@ -17,6 +18,7 @@ dependencies:
   - pip
   - pip:
       - netcdf4==1.6.2
+      - harmony-py
       - notebook
       - ipywidgets
       - widgetsnbextension
