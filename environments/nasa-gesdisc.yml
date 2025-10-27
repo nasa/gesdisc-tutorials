@@ -6,6 +6,7 @@ dependencies:
   - python=3.10
   - xarray=2025.4.0
   - dask
+  - boto3
   - pandas
   - seaborn
   - matplotlib
