@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.10
+  - python=3.11
   - xarray=2025.4.0
   - rioxarray
   - dask
@@ -26,3 +26,4 @@ dependencies:
       - pandas-profiling
       - lxml
       - tabulate
+      - terra_ui_components
