@@ -5,7 +5,7 @@ As the Earth Science Data Systems (ESDS) Program moves toward a consolidated Ear
 ## For all GES DISC data users
 
 ### Migration to the Earthdata website
-GES DISC will be migrating the [GES DISC website](https://disc.gsfc.nasa.gov) to the [Earthdata website](https://earthdata.nasa.gov). While both sites will remain active during the transition phase (from May 2026 to November 2026), all traffic will be redirected to the Earthdata website after November. This [guide](https://disc.gsfc.nasa.gov/information/documents?keywords=migration&title=Migration%20to%20Earthdata) will help you navigate the new Earthdata website. To learn more about ESDS’s Web Unification Project, please visit https://www.earthdata.nasa.gov/about/web-unification-project. 
+GES DISC will be migrating the [GES DISC website](https://disc.gsfc.nasa.gov) to the [Earthdata website](https://earthdata.nasa.gov). While both sites will remain active during the transition phase (from May 2026 to November 2026), all traffic will be redirected to the Earthdata website after November 2026. This [guide](https://disc.gsfc.nasa.gov/information/documents?keywords=migration&title=Migration%20to%20Earthdata) will help you navigate the new Earthdata website. To learn more about ESDS’s Web Unification Project, please visit https://www.earthdata.nasa.gov/about/web-unification-project. 
 
 ### Discontinuation of on-premises data services
 GES DISC will be discontinuing several data access services and tools that reside on our on-premises servers. 
