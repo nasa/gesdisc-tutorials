@@ -5,10 +5,10 @@ As the Earth Science Data Systems (ESDS) Program moves toward a consolidated Ear
 ## For all GES DISC data users
 
 ### Migration to the Earthdata website
-GES DISC will be migrating the [GES DISC website](https://disc.gsfc.nasa.gov) to the [Earthdata website](https://earthdata.nasa.gov). While both sites will remain active during the transition phase (from May 2026 to November 2026), all traffic will be redirected to the Earthdata website after November 2026. This [guide](https://disc.gsfc.nasa.gov/information/documents?keywords=migration&title=Migration%20to%20Earthdata) will help you navigate the new Earthdata website. To learn more about ESDS’s Web Unification Project, please visit https://www.earthdata.nasa.gov/about/web-unification-project. 
+Information in the [GES DISC website](https://disc.gsfc.nasa.gov) will be migrated to the [Earthdata website](https://earthdata.nasa.gov). While both sites will remain active during the transition phase (from May 2026 to November 2026), all traffic will be redirected to the Earthdata website after November 2026. This [guide](https://disc.gsfc.nasa.gov/information/documents?keywords=migration&title=Migration%20to%20Earthdata) will help you navigate the new Earthdata website. To learn more about ESDS’s Web Unification Project, please visit https://www.earthdata.nasa.gov/about/web-unification-project. 
 
 ### Discontinuation of on-premises data services
-GES DISC will be discontinuing several data access services and tools that reside on our on-premises servers. 
+GES DISC is migrating data access and services to Earthdata Cloud. In the process, based on usage history, several data access services and tools that reside on our on-premises servers will be discontinued. 
 
 #### OPeNDAP: 
 GES DISC data collections with [OPeNDAP](https://www.opendap.org/documentation/) access will be enabled in the [OPeNDAP in the Cloud](https://opendap.earthdata.nasa.gov/). As collections are fully enabled in OPeNDAP in the Cloud, the on-premises OPeNDAP access will discontinue. GES DISC is using a phased approach to this transition where all on-premises OPeNDAP access will become inaccessible between now and the end of September 2026. Visit our [guide](https://disc.gsfc.nasa.gov/information/howto?keywords=OPeNDAP%20in%20the%20Cloud&title=OPeNDAP%20In%20The%20Cloud) to learn more about the OPeNDAP in the Cloud and step-by-step instructions on transitioning your workflows for continued access.
