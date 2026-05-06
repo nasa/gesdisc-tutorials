@@ -1,6 +1,7 @@
 # GES DISC Cloud Migration Guidance
+Last updated: May 6, 2026
 
-As the Earth Science Data Systems (ESDS) Program moves toward a consolidated Earthdata entity through its web presence and data access through the Earthdata Cloud, GES DISC is undergoing several changes in the coming months that users and data providers should be aware of. This document will be updated as more information becomes available. For any questions or help finding data, please reach out to gsfc-dl-help-disc@mail.nasa.gov or visit the [Earthdata Forum](https://forum.earthdata.nasa.gov/).
+As the Earth Science Data Systems (ESDS) Program moves toward a consolidated Earthdata entity through its web presence and data access through the Earthdata Cloud, GES DISC is undergoing several changes in the coming months that users and data providers should be aware of. This document will be updated as more information becomes available. For any questions or help finding data, please visit the [Earthdata Forum](https://forum.earthdata.nasa.gov/), or reach out to gsfc-dl-help-disc@mail.nasa.gov before November 2026.
 
 ## For all GES DISC data users
 
@@ -29,7 +30,11 @@ The [THREDDS Data Server (TDS)](https://www.unidata.ucar.edu/software/tds) will 
 The AIRS Level 1 and Level 2 Subsetter will be discontinued no earlier than June 12, 2026. Once all of the collections are enabled in OPeNDAP in the Cloud, dimension-based channel subsetting and variable subsetting will be available. See our [tutorial](https://github.com/nasa/gesdisc-tutorials/blob/main/notebooks/How_to_Subset_L1_L2_AIRS_Using_OPeNDAP_and_Python.ipynb) on using OPeNDAP in the Cloud and Python to subset AIRS Level 1 and Level 2 data.
 
 #### Previously available services that have been discontinued:
-[GrADS Data Server (GDS)](https://disc.gsfc.nasa.gov/information/alerts?title=GrADS%20Data%20Server%20(GDS)%20service%20has%20been%20discontinued), [AIRS Near-Real-Time (NRT) Viewer tool](https://disc.gsfc.nasa.gov/information/alerts?title=AIRS%20NRT%20Viewer%20tool%20to%20be%20discontinued%20no%20earlier%20than%20December%2017,%202025); [Hydrology Data Rods service](https://disc.gsfc.nasa.gov/information/alerts?keywords=data%20rods&title=The%20Hydrology%20Data%20Rods%20service%20will%20be%20discontinued%20no%20earlier%20than%20October%2031,%202025%20and%20transitioned%20to%20a%20new%20data%20access%20method); [NASA Level 2 Data Quality Visualization Service (DQViz)](https://disc.gsfc.nasa.gov/information/alerts?title=NASA%20DQViz%20Service%20to%20be%20retired); Open Geospatial Consortium (OGC) [Web Map Service (WMS)](https://disc.gsfc.nasa.gov/information/alerts?keywords=wms&title=OGC%20Web%20Map%20Service%20to%20be%20retired) for AIRS, TRMM, and OMI data; [Multi-sensor Aerosol Products Sampling System (MAPSS) tool](https://disc.gsfc.nasa.gov/information/alerts?keywords=mapss&title=MAPSS%20tool%20to%20be%20discontinued%20no%20earlier%20than%20December%2015,%202025). 
+- [GrADS Data Server (GDS)](https://disc.gsfc.nasa.gov/information/alerts?title=GrADS%20Data%20Server%20(GDS)%20service%20has%20been%20discontinued)
+- [AIRS Near-Real-Time (NRT) Viewer tool](https://disc.gsfc.nasa.gov/information/alerts?title=AIRS%20NRT%20Viewer%20tool%20to%20be%20discontinued%20no%20earlier%20than%20December%2017,%202025)
+- [Hydrology Data Rods service](https://disc.gsfc.nasa.gov/information/alerts?keywords=data%20rods&title=The%20Hydrology%20Data%20Rods%20service%20will%20be%20discontinued%20no%20earlier%20than%20October%2031,%202025%20and%20transitioned%20to%20a%20new%20data%20access%20method); [NASA Level 2 Data Quality Visualization Service (DQViz)](https://disc.gsfc.nasa.gov/information/alerts?title=NASA%20DQViz%20Service%20to%20be%20retired)
+- Open Geospatial Consortium (OGC) [Web Map Service (WMS)](https://disc.gsfc.nasa.gov/information/alerts?keywords=wms&title=OGC%20Web%20Map%20Service%20to%20be%20retired) for AIRS, TRMM, and OMI data
+- [Multi-sensor Aerosol Products Sampling System (MAPSS) tool](https://disc.gsfc.nasa.gov/information/alerts?keywords=mapss&title=MAPSS%20tool%20to%20be%20discontinued%20no%20earlier%20than%20December%2015,%202025) 
 
 
 ### Changes to HTTPS data access
