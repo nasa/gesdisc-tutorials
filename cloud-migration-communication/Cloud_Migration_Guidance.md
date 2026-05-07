@@ -32,7 +32,8 @@ The AIRS Level 1 and Level 2 Subsetter will be discontinued no earlier than June
 #### Previously available services that have been discontinued:
 - [GrADS Data Server (GDS)](https://disc.gsfc.nasa.gov/information/alerts?title=GrADS%20Data%20Server%20(GDS)%20service%20has%20been%20discontinued)
 - [AIRS Near-Real-Time (NRT) Viewer tool](https://disc.gsfc.nasa.gov/information/alerts?title=AIRS%20NRT%20Viewer%20tool%20to%20be%20discontinued%20no%20earlier%20than%20December%2017,%202025)
-- [Hydrology Data Rods service](https://disc.gsfc.nasa.gov/information/alerts?keywords=data%20rods&title=The%20Hydrology%20Data%20Rods%20service%20will%20be%20discontinued%20no%20earlier%20than%20October%2031,%202025%20and%20transitioned%20to%20a%20new%20data%20access%20method); [NASA Level 2 Data Quality Visualization Service (DQViz)](https://disc.gsfc.nasa.gov/information/alerts?title=NASA%20DQViz%20Service%20to%20be%20retired)
+- [Hydrology Data Rods service](https://disc.gsfc.nasa.gov/information/alerts?keywords=data%20rods&title=The%20Hydrology%20Data%20Rods%20service%20will%20be%20discontinued%20no%20earlier%20than%20October%2031,%202025%20and%20transitioned%20to%20a%20new%20data%20access%20method)
+- [NASA Level 2 Data Quality Visualization Service (DQViz)](https://disc.gsfc.nasa.gov/information/alerts?title=NASA%20DQViz%20Service%20to%20be%20retired)
 - Open Geospatial Consortium (OGC) [Web Map Service (WMS)](https://disc.gsfc.nasa.gov/information/alerts?keywords=wms&title=OGC%20Web%20Map%20Service%20to%20be%20retired) for AIRS, TRMM, and OMI data
 - [Multi-sensor Aerosol Products Sampling System (MAPSS) tool](https://disc.gsfc.nasa.gov/information/alerts?keywords=mapss&title=MAPSS%20tool%20to%20be%20discontinued%20no%20earlier%20than%20December%2015,%202025) 
 
