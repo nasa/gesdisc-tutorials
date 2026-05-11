@@ -1,5 +1,6 @@
 # GES DISC Cloud Migration Guidance
-Last updated: May 11, 2026
+Originally puslished: May 11, 2026
+Last updated: May 11, 2026 (rev 1)
 
 As the Earth Science Data Systems (ESDS) Program moves toward a consolidated Earthdata entity through its web presence and data access through the Earthdata Cloud, GES DISC is undergoing several changes in the coming months that users and data providers should be aware of. This document will be updated as more information becomes available. For any questions or help finding data, please visit the [Earthdata Forum](https://forum.earthdata.nasa.gov/), or reach out to gsfc-dl-help-disc@mail.nasa.gov before November 2026.
 
