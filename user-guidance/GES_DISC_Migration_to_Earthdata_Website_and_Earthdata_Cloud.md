@@ -1,4 +1,4 @@
-# GES DISC Website and Cloud Migration Guidance
+# GES DISC Migration to Earthdata Website and Earthdata Cloud 
 Originally published: May 11, 2026
 
 Last updated: May 11, 2026 (rev 1)
