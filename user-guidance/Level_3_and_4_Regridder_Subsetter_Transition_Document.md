@@ -43,5 +43,6 @@ The Earthdata Search website, managed by NASA ESDIS provides a user interface fo
     - [Video: Using Harmony Tools in Earthdata Search](https://www.youtube.com/watch?v=nrs2wTbcp-M)
 - For guides on accessing the service using programming tools:
     - [Python: How to Subset and Download Level 2, 3 and 4 Data using Harmony-py](http://disc.gsfc.nasa.gov/information/howto?title=How%20to%20Subset%20and%20Download%20Level%202,%203,%20and%204%20GES%20DISC%20Data%20Using%20Python)
+      
 ## Questions?
 Please reach out on the [Earthdata Forum](https://forum.earthdata.nasa.gov/viewforum.php?f=7) or contact the GES DISC Help Desk (via email at gsfc-dl-help-disc@mail.nasa.gov) for any questions about cloud data and services. Other contact methods are listed on our Contact Us page.
