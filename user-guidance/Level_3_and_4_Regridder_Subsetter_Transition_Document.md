@@ -1,6 +1,6 @@
 # GES DISC Level 3 & 4 Regridder and Subsetter Replaced with Enterprise Level 3 & 4 Subsetter
 
-In line with NASA’s goal of unification with Enterprise services, the GES DISC Level 3 & 4 Regridder and Subsetter Service is being transitioned into an integrated Enterprise-powered Level 3 and 4 Subsetting Service. This document outlines the capabilities of the new  Level 3 and 4 Subsetting Service, including links to relevant How-Tos.
+In line with NASA’s goal of unification with Enterprise services, the GES DISC Level 3 & 4 Regridder and Subsetter Service is being transitioned into an integrated Enterprise-powered Level 3 and 4 Subsetting Service. This transition will take place no earlier than July 31st, 2026. This document outlines the capabilities of the new Level 3 and 4 Subsetting Service, including links to relevant How-Tos.
 
 ## Capabilities
 **The new Level 3 & 4 Subsetting Service provides the following capabilities:**
