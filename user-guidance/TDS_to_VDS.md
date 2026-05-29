@@ -45,9 +45,6 @@ The following collections (complete with all variables) are listed below:
 
 Please click the following links for Jupyter Notebook tutorials on accessing GES DISC Kerchunk Files:
 - [How to Access GES DISC Kerchunk Files](../notebooks/How_To_Access_GES_DISC_Kerchunk_Files.ipynb)
-  <a target="_blank" href="https://colab.research.google.com/github/nasa/gesdisc-tutorials/blob/main/notebooks/How_To_Access_GES_DISC_Kerchunk_Files.ipynb">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-  </a>
 
 ### Additional Resources
 
