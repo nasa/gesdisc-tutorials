@@ -19,16 +19,17 @@ In line with NASA’s goal of unification with Enterprise services, the GES DISC
 - Regridding
 - Output as GeoTIFF/COG
 - Statistics (mean/max/min)
+- Select custom dimension range
 
 ## How Can Users Access the New Level 3 & 4 Subsetting Service?
 The new Level 3 & 4 Subsetting Service uses the Harmony Application Programming Interface (API) in the [Earthdata Cloud](https://www.earthdata.nasa.gov/about/earthdata-cloud-evolution) to search and perform subsetting. Users will need to be logged into their Earthdata Login account to access the new Level 3 & 4 Subsetting Service. The following three methods can be used to perform subsetting:
 
 ### 1. *Level 3 & 4 Subsetting Service User Interface:*
-For select Level 3 & 4 collections, a user interface is available on their associated dataset landing page beneath the "Data Access" panel. This method requires an [Earthdata Login](http://disc.gsfc.nasa.gov/earthdata-login) account. To learn more about how to use the subsetter user interface, please visit this how-to: How to Subset Level 2 Data with the Earthdata Enterprise Subsetter, which outlines how to use the subsetter for Level 2 data, but these steps can be applied to  Level 3 and 4 collections. 
+For select Level 3 & 4 collections, a user interface is available on their associated dataset landing page beneath the "Data Access" panel. This method requires an [Earthdata Login](https://urs.earthdata.nasa.gov/documentation/what_do_i_need_to_know) account. To learn more about how to use the subsetter user interface, please visit this how-to: [How to Subset Level 2 Data with the Earthdata Enterprise Subsetter](http://disc.gsfc.nasa.gov/information/howto?title=How%20to%20Subset%20Level%202%20Data%20with%20the%20Earthdata%20Enterprise%20Subsetter), which outlines how to use the subsetter for Level 2 data, but these steps can be applied to  Level 3 and 4 collections. 
 
 ### 2. *Harmony API*
 
-The Harmony API handles various subsetting operations on select Level 3 & 4 data, running from the [Earthdata Cloud](https://www.earthdata.nasa.gov/about/earthdata-cloud-evolution) and accessible to anyone with an [Earthdata Login](http://disc.gsfc.nasa.gov/earthdata-login) account. It can be accessed by querying URLs that utilize Open Geospatial Consortium (OGC) syntax, or through the Python [Harmony-py](http://harmony-py.readthedocs.io/en/main/) package, as demonstrated in this Jupyter Notebook tutorial: [How to Access Level 2, 3, and 4 Data Using Python](https://disc.gsfc.nasa.gov/information/howto?title=How%20to%20Subset%20and%20Download%20Level%202,%203,%20and%204%20GES%20DISC%20Data%20Using%20Python).
+The Harmony API handles various subsetting operations on select Level 3 & 4 data, running from the [Earthdata Cloud](https://www.earthdata.nasa.gov/about/earthdata-cloud-evolution) and accessible to anyone with an [Earthdata Login](https://urs.earthdata.nasa.gov/documentation/what_do_i_need_to_know) account. It can be accessed by querying URLs that utilize Open Geospatial Consortium (OGC) syntax, or through the Python [Harmony-py](http://harmony-py.readthedocs.io/en/main/) package, as demonstrated in this Jupyter Notebook tutorial: [How to Access Level 2, 3, and 4 Data Using Python](https://disc.gsfc.nasa.gov/information/howto?title=How%20to%20Subset%20and%20Download%20Level%202,%203,%20and%204%20GES%20DISC%20Data%20Using%20Python).
 
 ### 3. *Earthdata Search*
 
