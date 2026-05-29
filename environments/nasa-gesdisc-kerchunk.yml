@@ -1,0 +1,29 @@
+name: nasa-gesdisc-kerchunk
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - sqlite>=3.45
+  - numpy=2.4.3        
+  - pandas=2.3.3       
+  - pyarrow=23.0.1     
+  - xarray
+  - fsspec
+  - zarr
+  - aiohttp
+  - dask
+  - distributed
+  - matplotlib
+  - cartopy
+  - pip:
+    - earthaccess
+    - notebook
+    - ipywidgets
+    - widgetsnbextension
+    - terra_ui_components
+    - kerchunk
+    - fastparquet==2026.3.0
+    - s3fs
+    - h5py
+    - virtualizarr
