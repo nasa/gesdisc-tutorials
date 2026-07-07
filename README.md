@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8205655.svg)](https://doi.org/10.5281/zenodo.8205655) 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8205655.svg)](https://zenodo.org/records/15831459) 
 
 # GES DISC Tutorials
 
@@ -8,8 +8,8 @@ Most tutorials in this repository take the form of python notebooks. Jupyter is 
 
 | Notebook  | Summary | Services, Tools, Data Types | Actions | Recommended Anaconda Environment ([?](environments/)) |
 | ------------- |-------------|:-------------:|:-------------:|:-------------:|
-|[How to Access GES DISC Data Using Python](notebooks/How_to_Access_GES_DISC_Data_Using_Python.ipynb) | This notebook demonstrates basic methods for accessing GES DISC Data using Python | Python, OPeNDAP, THREDDS | Search, Access, Subset | [nasa-gesdisc-opendap.yml](environments/nasa-gesdisc-opendap.yml) |
-|[How to Subset and Download Level 2, 3, and 4 GES DISC Data Using Python](notebooks/How_to_Subset_and_Download_L234_Data_Using_Python.ipynb) | This notebook uses the `harmony-py` library to query, subset, and download Level 2 and Level 3/4 GES DISC Granules from Enterprise Services. | Python, Harmony | Search, Access, Subset | [nasa-gesdisc.yml](environments/nasa-gesdisc.yml) |
+| <!-- test-opendap --> [How to Access GES DISC Data Using Python](notebooks/How_to_Access_GES_DISC_Data_Using_Python.ipynb) | This notebook demonstrates basic methods for accessing GES DISC Data using Python | Python, OPeNDAP, THREDDS | Search, Access, Subset | [nasa-gesdisc-opendap.yml](environments/nasa-gesdisc-opendap.yml) |
+| <!-- test-main --> [How to Subset and Download Level 2, 3, and 4 GES DISC Data Using Python](notebooks/How_to_Subset_and_Download_L234_Data_Using_Python.ipynb) | This notebook uses the `harmony-py` library to query, subset, and download Level 2 and Level 3/4 GES DISC Granules from Enterprise Services. | Python, Harmony | Search, Access, Subset | [nasa-gesdisc.yml](environments/nasa-gesdisc.yml) |
 |[How to Generate Earthdata Prerequisite Files](notebooks/How_to_Generate_Earthdata_Prerequisite_Files.ipynb) | This notebook demonstrates how to generate three Earthdata prerequisite files (.netrc, .urs_cookies, .dodsrc) or an Earthdata Login token needed to access the GES DISC archives manually, or through Python.| Python | Access | [nasa-gesdisc.yml](environments/nasa-gesdisc.yml) |
 |[How to Access GES DISC Kerchunk Files](notebooks/How_To_Access_GES_DISC_Kerchunk_Files.ipynb) | This notebook demonstrates how to access virtual datasets via Kerchunk files using Python.| Python | Access | [nasa-gesdisc-kerchunk.yml](environments/nasa-gesdisc-kerchunk.yml) |
 |[How to Subset L1/L2 AIRS Data Using OPeNDAP and Python](notebooks/How_to_Subset_L1_L2_AIRS_Using_OPeNDAP_and_Python.ipynb) | TThis notebook demonstrates subsetting operations for all AIRS collections using xarray and the curated subsetting groups from `ancillary/subset_airs.json` | Python, OPeNDAP | Search, Access, Subset | [nasa-gesdisc-opendap.yml](environments/nasa-gesdisc-opendap.yml) |
