@@ -1,7 +1,6 @@
 name: nasa-gesdisc-opendap
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.11
   - xarray=2025.4.0
