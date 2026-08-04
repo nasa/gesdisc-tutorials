@@ -15,7 +15,7 @@ dependencies:
   - earthaccess
   - pip
   - pip:
-      - pydap==3.5.10
+      - pydap
       - netcdf4==1.7.4
       - notebook
       - ipywidgets
