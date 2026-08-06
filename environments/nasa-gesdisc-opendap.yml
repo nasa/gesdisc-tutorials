@@ -8,6 +8,8 @@ dependencies:
   - pandas
   - seaborn
   - matplotlib
+  - ipympl
+  - plotly
   - numpy=1.25.2
   - cartopy
   - h5netcdf
