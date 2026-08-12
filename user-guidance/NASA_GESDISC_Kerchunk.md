@@ -3,7 +3,7 @@
 
 ### Introduction
 
-In compliance with NASA's [Open Data Policy](https://www.earthdata.nasa.gov/engage/open-data-services-software-policies) and NASA’s Earth Science Data Systems ([ESDS](https://www.earthdata.nasa.gov/about)) Program’s strategic vision, The GES DISC THREDDS Data Service (TDS) is being discontinued in favor of virtualized data stores. This document outlines the capabilities and access methods of virtual data stores, specifically [Kerchunk](https://fsspec.github.io/kerchunk/) files, as a temporary replacement for the TDS service.
+[Kerchunk](https://fsspec.github.io/kerchunk/) virtual data stores provide a lightweight way to access data in existing file formats as cloud-optimized, virtual datasets without needing to run code from within the Earthdata Cloud. They enable efficient, metadata-driven access to large datasets through Python tools such as `Xarray`, serving as a flexible alternative to traditional data services like THREDDS, which have been discontinued at GES DISC. This document outlines the capabilities and access methods of virtual data stores, specifically [Kerchunk](https://fsspec.github.io/kerchunk/) files.
 
 ### What are [Virtual Data Stores](https://nasa-impact.github.io/virtual-stores-feasibility-report/)?
 
