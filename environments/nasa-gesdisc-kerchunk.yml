@@ -1,7 +1,6 @@
 name: nasa-gesdisc-kerchunk
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.12
   - sqlite>=3.45
@@ -16,6 +15,7 @@ dependencies:
   - distributed
   - matplotlib
   - cartopy
+  - pip
   - pip:
     - earthaccess
     - notebook
