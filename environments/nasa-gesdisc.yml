@@ -2,15 +2,15 @@ name: nasa-gesdisc
 channels:
   - conda-forge
 dependencies:
-  - python=3.11
-  - xarray=2025.4.0
+  - python=3.12
+  - xarray
   - rioxarray
   - dask
   - boto3
   - pandas
   - seaborn
   - matplotlib
-  - numpy=1.25.2
+  - numpy
   - cartopy
   - h5netcdf
   - h5py
