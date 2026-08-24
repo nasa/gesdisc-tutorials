@@ -1,11 +1,12 @@
 name: nasa-gesdisc
 channels:
   - conda-forge
-  - defaults
 dependencies:
-  - python=3.10
+  - python=3.11
   - xarray=2025.4.0
+  - rioxarray
   - dask
+  - boto3
   - pandas
   - seaborn
   - matplotlib
@@ -16,10 +17,12 @@ dependencies:
   - earthaccess
   - pip
   - pip:
-      - netcdf4==1.6.2
+      - netcdf4==1.7.4
+      - harmony-py
       - notebook
       - ipywidgets
       - widgetsnbextension
       - pandas-profiling
       - lxml
       - tabulate
+      - terra_ui_components

@@ -46,3 +46,17 @@ The `nasa-gesdisc-arcgis.yml` environment contains a Python 3.10 installation th
   - Open Anaconda Navigator, click `Environments` -> `Import`
   - Select `Import from: Local drive` and select the downloaded `arcgis.yml` file. `New Environment Name` will automatically fill using the name from the file, but you can change this if desired.
   - Click the triangular "play" button to the right of the `nasa-gesdisc-arcgis` environment tab, and click the "Open in Terminal" button to activate the environment in a terminal session.
+ 
+#### 5. Installing `nasa-gesdisc-kerchunk.yml`
+The `nasa-gesdisc-arcgis.yml` environment contains a Python 3.12 installation that *only* works with select Kerchunk how-tos.
+
+- To install via a command line: 
+  - Open a terminal, ensuring that the `conda` can be called.
+  - Enter: `conda env create -f https://raw.githubusercontent.com/nasa/gesdisc-tutorials/refs/heads/main/environments/nasa-gesdisc-kerchunk.yml`.
+  - Activate the environment by entering: `conda activate nasa-gesdisc-kerchunk`.
+
+- To install via Anaconda Navigator: 
+  - Download `nasa-gesdisc-kerchunk.yml` to your computer.
+  - Open Anaconda Navigator, click `Environments` -> `Import`
+  - Select `Import from: Local drive` and select the downloaded `nasa-gesdisc-kerchunk.yml` file. `New Environment Name` will automatically fill using the name from the file, but you can change this if desired.
+  - Click the triangular "play" button to the right of the `nasa-gesdisc-nasa-gesdisc-kerchunk` environment tab, and click the "Open in Terminal" button to activate the environment in a terminal session.
