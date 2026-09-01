@@ -1,11 +1,18 @@
 # GES DISC Migration to Earthdata Website and Earthdata Cloud 
 Originally published: May 11, 2026
 
-Last updated: August 12, 2026
+Last updated: September 1, 2026
 
 As the Earth Science Data Systems (ESDS) Program moves toward a consolidated Earthdata entity through its web presence and data access through the Earthdata Cloud, GES DISC is undergoing several changes in the coming months that users and data providers should be aware of. This document will be updated as more information becomes available. For any questions or help finding data, please visit the [Earthdata Forum](https://forum.earthdata.nasa.gov/), or reach out to gsfc-dl-help-disc@mail.nasa.gov before November 2026.
 
 ## For all GES DISC data users
+
+### Changes to HTTPS data access
+HTTPS access to data on our on-premises servers (`https://\<server\>.gesdisc.eosdis.nasa.gov/...`) will no longer be available by September 30, 2026. GES DISC is using a phased approach to this transition where direct access to our on-premises servers will be disabled between now and the end of September. Scripts used to construct URLs for data or OPeNDAP requests from these systems will cease to function once public access is disabled. However, data will continue to be available for HTTPS download free of charge from the Earthdata Cloud (URLs starting with `https://data.gesdisc.earthdata.nasa.gov/...`), though some functionality - notably recursive download of entire directories via wget/curl - will not be available. Instead, lists of granule URLs will need to be compiled via query to NASA’s [Common Metadata Repository (CMR)](https://www.earthdata.nasa.gov/about/esdis/eosdis/cmr). 
+
+In addition to the [CMR API](https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html), [Earthdata Search](https://search.earthdata.nasa.gov/) provides an interface to finding and downloading granules. The community developed [Earthaccess Python Package](https://github.com/earthaccess-dev/earthaccess) is a recommended tool for finding and downloading data from Earthdata from within Python. See our [tutorial](https://github.com/nasa/gesdisc-tutorials/blob/main/notebooks/How_to_Access_GES_DISC_Data_Using_Python.ipynb) for other methods of accessing GES DISC data via Earthdata Cloud using Python. A browsable listing of data files, similar to the old HTTPS interface, is available at [Earthdata  Provider Holdings Directory](https://cmr.earthdata.nasa.gov/search/site/collections/directory/eosdis) - though it should be noted that recursive wget/curl will NOT work on this interface.
+
+For users with access to AWS resources in the `us-west-2` region, direct S3 access to data is available. See [this tutorial](https://nasa-openscapes.github.io/earthdata-cloud-cookbook/how-tos/access-data/access-cloud-python.html) for an example of direct S3 access using the Earthaccess Python library. Direct S3 URLs can be found in CMR, both via [Earthdata Search](https://search.earthdata.nasa.gov/) and API queries.
 
 ### Migration to the Earthdata website
 Information in the [GES DISC website](https://disc.gsfc.nasa.gov) will be migrated to the [Earthdata website](https://earthdata.nasa.gov). While both sites will remain active during the transition phase (from May 2026 to November 2026), all traffic will be redirected to the Earthdata website after November 2026. This [guide](https://disc.gsfc.nasa.gov/information/documents?keywords=migration&title=Migration%20to%20Earthdata) will help you navigate the new Earthdata website. To learn more about ESDS’s Web Unification Project, please visit https://www.earthdata.nasa.gov/about/web-unification-project. 
@@ -38,14 +45,6 @@ The AIRS Level 1 and Level 2 Subsetter was discontinued as of July 31, 2026. Onc
 - [NASA Level 2 Data Quality Visualization Service (DQViz)](https://disc.gsfc.nasa.gov/information/alerts?title=NASA%20DQViz%20Service%20to%20be%20retired)
 - Open Geospatial Consortium (OGC) [Web Map Service (WMS)](https://disc.gsfc.nasa.gov/information/alerts?keywords=wms&title=OGC%20Web%20Map%20Service%20to%20be%20retired) for AIRS, TRMM, and OMI data
 - [Multi-sensor Aerosol Products Sampling System (MAPSS) tool](https://disc.gsfc.nasa.gov/information/alerts?keywords=mapss&title=MAPSS%20tool%20to%20be%20discontinued%20no%20earlier%20than%20December%2015,%202025) 
-
-
-### Changes to HTTPS data access
-HTTPS access to data on our on-premises servers (`https://\<server\>.gesdisc.eosdis.nasa.gov/...`) will no longer be available by September 30, 2026. GES DISC is using a phased approach to this transition where direct access to our on-premises servers will be disabled between now and the end of September. Scripts used to construct URLs for data or OPeNDAP requests from these systems will cease to function once public access is disabled. However, data will continue to be available for HTTPS download free of charge from the Earthdata Cloud (URLs starting with `https://data.gesdisc.earthdata.nasa.gov/...`), though some functionality - notably recursive download of entire directories via wget/curl - will not be available. Instead, lists of granule URLs will need to be compiled via query to NASA’s [Common Metadata Repository (CMR)](https://www.earthdata.nasa.gov/about/esdis/eosdis/cmr). 
-
-In addition to the [CMR API](https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html), [Earthdata Search](https://search.earthdata.nasa.gov/) provides an interface to finding and downloading granules. The community developed [Earthaccess Python Package](https://github.com/earthaccess-dev/earthaccess) is a recommended tool for finding and downloading data from EarthData from within Python. See our [tutorial](https://github.com/nasa/gesdisc-tutorials/blob/main/notebooks/How_to_Access_GES_DISC_Data_Using_Python.ipynb) for other methods of accessing GES DISC data via Earthdata Cloud using Python. A browsable listing of data files, similar to the old HTTPS interface, is available at [Earthdata  Provider Holdings Directory](https://cmr.earthdata.nasa.gov/search/site/collections/directory/eosdis) - though it should be noted that recursive wget/curl will NOT work on this interface.
-
-For users with access to AWS resources in the `us-west-2` region, direct S3 access to data is available. See [this tutorial](https://nasa-openscapes.github.io/earthdata-cloud-cookbook/how-tos/access-data/access-cloud-python.html) for an example of direct S3 access using the Earthaccess Python library. Direct S3 URLs can be found in CMR, both via [Earthdata Search](https://search.earthdata.nasa.gov/) and API queries.
 
 ## For GES DISC data providers
 
