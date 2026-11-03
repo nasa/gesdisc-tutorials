@@ -18,7 +18,7 @@ dependencies:
   - pip
   - pip:
       - pydap
-      - netcdf4==1.7.4
+      - netcdf4==1.7.5
       - notebook
       - ipywidgets
       - widgetsnbextension
